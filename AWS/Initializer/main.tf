@@ -7,7 +7,6 @@ data "aws_caller_identity" "current" {}
 
 resource "aws_s3_bucket" "jamulus_terraform_state_bucket" {
     bucket = "terraform-jamulus-${data.aws_caller_identity.current.account_id}"
-    region = "{REGION}"
 }
 
 resource "aws_dynamodb_table" "jamulus_terraform_state_dynamodb" {
